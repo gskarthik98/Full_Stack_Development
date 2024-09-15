@@ -1014,9 +1014,11 @@ const Rest_card = (props) => {
     return (
     <div class="res_card">
             <img class="res_img" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+restaurant.info.cloudinaryImageId}/>
+            <div id="rest_content">
             <h3>{restaurant.info.name}</h3>
             <h4>star rating: {restaurant.info.avgRating} . {restaurant.info.sla.slaString}</h4>
             <h6>{restaurant.info.cuisines.join(", ")}</h6>
+            </div>
             
         </div>)
 }
@@ -1035,7 +1037,7 @@ const Body=()=> {
 }
 const Header = () => {
    return (<div id="header_container">
-        <img id="logo" src="https://www.logodee.com/wp-content/uploads/2020/10/LD-C-58.jpg"/>
+        <img id="logo" src="https://cdn.sanity.io/images/gxmub2ol/production/8a355bd75a5eee73ec4b9e94a9c2cdf66f6bbbc1-1670x500.png"/>
         <div id="other_links">
             
             <div id="cart">Cart</div>
