@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 rest_cards_swiggy= [
   {
@@ -1009,6 +1009,8 @@ rest_cards_swiggy= [
     "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
   }
 ];
+
+
 const Rest_card = (props) => {
     const {restaurant} = props;
     return (
@@ -1022,16 +1024,21 @@ const Rest_card = (props) => {
             
         </div>)
 }
-const Res_cards=() => {return (    
-    <div id="res_container">
-        <Rest_card restaurant={rest_cards_swiggy[0]}/>
-        {rest_cards_swiggy.map(rest => <Rest_card restaurant = {rest}/>)}
-    </div>)
-}
+
+
 const Body=()=> {
+  let [rendres,setrendres] = useState(rest_cards_swiggy);
     return (<div id="body"><input id="search" type="search" placeholder="search your favourite food or restaurants"></input>
+    <br></br>
+    <button id="filter" onClick={()=>{console.log("button clicked")
+      rendres = rendres.filter((res)=> res.info.avgRating>4);
+      setrendres(rendres);
+    }}>Top Rated Restaurant</button>
         <br></br> <br></br>
-       <Res_cards/>
+        <div id="res_container">
+        <Rest_card restaurant={rest_cards_swiggy[0]}/>
+        {rendres.map(rest => <Rest_card restaurant = {rest}/>)}
+    </div>
         </div>
     )
 }

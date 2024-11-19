@@ -1,7 +1,7 @@
 #header_container{
     display: flex;
     justify-content: space-between;
-    border: 2px solid;
+    border-bottom: 2px solid darkred;
     border-radius: 5%;
     margin: 20px;
 }
@@ -21,7 +21,8 @@
     font-family: sans-serif;
 }
 #body{
-    border: 2px solid;
+    border-top: 6px dashed rgb(228, 166, 84);
+    border-bottom: 6px dashed rgb(228, 166, 84);
     border-radius: 5%;
     margin: 30px;
 }
@@ -38,8 +39,9 @@
 }
 
 .res_card:hover{
-    border: 6px solid greenyellow;
-    border-radius: 16%;
+    border: 3px solid rgb(214, 186, 102);
+    border-radius: 20%;
+    width: 310px;
     
 }
 .res_card{
