@@ -13,8 +13,9 @@ export const HeaderP = () => {
         </div>
 
         <div id="nav" className="flex items-center justify-evenly">
+            <Link to="/"  className="m-4 p-4 text-xl">Home</Link>
             <div id="cart" className="m-4 p-4 text-xl">Cart</div>
-            <Link to="/about"  className="m-4 p-4 text-xl">About</Link>
+            <Link to="/about"  className="m-4 p-4 text-xl">About</Link>           
             <div id="contact" className="m-4 p-4 text-xl">Contact Us</div>
             <div id="signIn" className="m-4 p-4 text-xl cursor-pointer bg-orange-300 rounded-xl  italic font-bold" onClick={handleSignInOut} >{signin_out}</div>
 
