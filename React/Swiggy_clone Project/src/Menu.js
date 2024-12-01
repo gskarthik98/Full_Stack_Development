@@ -7,7 +7,7 @@ export const MenuItems = () => {
     const [menus,setMenus]=useState([]);
     const [rest,setrest]=useState("");
     const [showIndex,setShowIndex]=useState(null);
-    const [showflag,setshowflag]=useState(false);
+    
     
     
     useEffect(()=>{

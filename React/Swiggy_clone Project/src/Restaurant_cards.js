@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Card } from "./restaurant_card";
 import { Shimmer } from "./ShimmerUI";
 import { Link } from "react-router-dom";
+import { Spl_res_card } from "./Restaurant_card_special";
 export const Res_cards=()=> 
     {   
         //Hooks
@@ -52,18 +53,21 @@ export const Res_cards=()=>
         );
 
     };
+
+    //spl res card
+    const SplCard = Spl_res_card(Card);
         
         //Full UI (Restaurant cards, Search, Clear and top rated restaurants)
         return ( 
-        <div>
-            <h1 className="font-bold m-5 p-5 text-3xl"> Restaurants with online food delivery in Hyderabad </h1>
+        <div className="">
+            <h1 className=" font-bold m-5 p-5 text-3xl"> Restaurants with online food delivery in Hyderabad </h1>
             
-            <div><input className="w-9/12 h-14 text-center focus:text-left  mx-28 my-4 border border-gray-300 rounded-xl" type="text" placeholder="What Restaurant is in your mind?" value={query_text} onChange={search}/></div>
+            <div className="flex justify-evenly"><input className="w-9/12 h-14 text-center focus:text-left flex justify-evenly my-4 border border-gray-700 rounded-xl" type="text" placeholder="What Restaurant is in your mind?" value={query_text} onChange={search}/></div>
             <button className=" p-4 m-2 mx-16 my-4 inline-block rounded-md border border-transparent px-8 py-3 text-center font-medium text-white bg-orange-500 hover:font-bold" onClick={filtered}>Top Rated Restaurants</button>
             <button className="rounded-full my-4 align-text-top text-sm hover:h-6 hover:text-gray-600" onClick={clear_filter}><img className="h-5 w-5" src="https://img.icons8.com/?size=100&id=31470&format=png&color=000000"/></button>
-            <div className="flex flex-wrap border border-black">
+            <div className="flex bg-slate-50 justify-evenly flex-wrap my-5">
                 {filtered_restaurants.map((res) => {return (
-                    <Link key={res?.info.id} to={"/restaurant/"+res?.info.id}><Card  props={res}/></Link>);
+                    res?.info?.avgRating>4.3?<Link key={res?.info.id} to={"/restaurant/"+res?.info.id}><SplCard  props={res}/></Link>:<Link key={res?.info.id} to={"/restaurant/"+res?.info.id}><Card  props={res}/></Link>);
                 })}
             </div>
 

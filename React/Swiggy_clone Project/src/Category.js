@@ -14,7 +14,7 @@ export const Categories = ({props, showItem ,setIndex})=>{
         console.log("2."+showItem+" showflag "+ showflag);
     }
     return (
-        <div className="border border-slate-600 shadow-md my-4 bg-slate-50">
+        <div className="border border-slate-600 shadow-md my-4 bg-white">
         <div className=" shadow-md my-4 flex justify-between hover:cursor-pointer" onClick={clickhandler}>
         <div className="m-4 p-4 text-2xl font-bold" >{menu.title +" (" + (menu?.itemCards?.length || menu?.carousel?.length || 0)+")"} </div>
         <div className="m-4 p-4 text-4xl font-bold">↓</div>
